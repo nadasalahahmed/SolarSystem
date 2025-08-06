@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solar System Theme</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-size: 10px;
+            background: #b5c1db;
+            color: #eee;
+            font-family: sans-serif;
+            background: rgb(60, 88, 116);
+            transition: background .5s ease-in;
+        }
+
+        nav {
+            position: fixed;
+            height: 7rem;
+            top: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: rgba(10, 10, 40, 0.9);
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .toggle-container {
+            width: 3rem;
+            height: 3rem;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .toggle-ball img {
+            width: 3rem;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links.show {
+            display: flex;
+        }
+
+        .nav-links li a {
+            color: #fff;
+            font-size: 1.8rem;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+
+        /* ========== Hero Section ========== */
+        .first {
+            background: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 7rem;
+        }
+
+        .main {
+            text-align: center;
+        }
+
+        .main h1 {
+            font-size: 5rem;
+            margin: 1rem 0;
+        }
+
+        .main p {
+            font-size: 1.8rem;
+        }
+
+        .check {
+            margin-top: 2rem;
+            padding: 1.2rem 2rem;
+            background: #9ac4f8;
+            color: #000;
+            font-size: 1.8rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        /* ========== About Section ========== */
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 6rem 0rem;
+            gap: 2rem;
+            /* background: #111; */
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .about-content h2 {
+            font-size: 3.6rem;
+            color: #87b5f1;
+            margin-bottom: 2rem;
+        }
+
+        .about-content p {
+            font-size: 1.6rem;
+            color: #ddd;
+        }
+
+        .about-image img {
+            height: 30rem;
+            border-radius: 8px;
+            margin-left: 15rem;
+        }
+
+        /* ========== Planets Section ========== */
+        .menu-section {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 0rem;
+            background: transparent;
+        }
+
+        .menu-section h2 {
+            font-size: 4rem;
+            text-align: center;
+        }
+
+        .menu-section p {
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .tabs {
+            display: flex;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: .5rem;
+            border: .2rem solid #ffdd00;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 2rem 2rem;
+            cursor: pointer;
+            font-size: 2rem;
+            color: #ccc;
+            background: #111;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .tab.active {
+            background: #222;
+            color: #ffdd00;
+        }
+
+        #menu {
+            margin: 5rem auto;
+        }
+
+        .sentence-box {
+            border-left: 4px solid #ffdd00;
+            padding: 2rem 1rem;
+            margin: 2rem auto;
+            background: #111;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .planet-name {
+            font-size: 2.5rem;
+            color: #ffdd00;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .planet-desc,
+        .planet-info {
+            font-size: 1.8rem;
+            color: #ccc;
+            margin-bottom: 0.5rem;
+        }
+
+        .planet-image {
+            height: 18rem;
+            object-fit: cover;
+            border-radius: 50%;
+            animation: rotatePlanet 10s linear infinite;
+            margin-top: 3rem;
+        }
+
+        @keyframes rotatePlanet {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ========== Form Section ========== */
+        .form-container {
+            background-image: url(./images/solat\ system.webp);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-blend-mode: overlay;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10rem 0rem 10rem 0rem;
+        }
+
+        .form {
+            background-color: #eee;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem .5rem;
+            border-radius: 2rem;
+            margin-left: 3rem;
+        }
+
+        .form input,
+        .form select,
+        .form button {
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        .form select {
+            width: 90%;
+        }
+
+        .form button {
+            background: #9ac4f8;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .about {
+            margin-top: 5rem;
+            padding: 5rem;
+            margin-left: 6rem;
+        }
+
+        .about h2 {
+            color: #e6e6e6;
+            font-size: 4rem;
+            margin-bottom: 5rem;
+            margin-top: 3rem;
+        }
+
+        .about p {
+            color: #e6e6e6;
+            line-height: 2rem;
+            font-size: 1.5rem;
+        }
+
+        #nameError,
+        #emailError,
+        #mobileerror {
+            font-size: 1.5rem;
+            color: black;
+        }
+
+        .submit {
+            background-color: #9ac4f8;
+        }
+
+        /* ========== Developers Section ========== */
+        .developers-section {
+            /* background: #111; */
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .developers-section h2 {
+            font-size: 4rem;
+            color: #87b5f1;
+            margin-bottom: 4rem;
+        }
+
+        .developers-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .developer-card {
+            background: #222;
+            border-radius: 8px;
+            padding: 2rem;
+            width: 200px;
+            transition: transform 0.3s ease;
+        }
+
+        .developer-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .developer-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 2px solid #ffdd00;
+        }
+
+        .developer-card h3 {
+            font-size: 2rem;
+            color: #ffdd00;
+            margin-bottom: 0.5rem;
+        }
+
+        .developer-card p {
+            font-size: 1.6rem;
+            color: #ccc;
+        }
+
+        /* ========== Footer Section ========== */
+        footer {
+            /* background: rgba(10, 10, 40, 0.9); */
+            padding: 4rem 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffdd00;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .footer-links li a {
+            color: #fff;
+            font-size: 1.6rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links li a:hover {
+            color: #ffdd00;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .footer-social a img {
+            width: 3rem;
+            height: 3rem;
+            transition: transform 0.3s;
+        }
+
+        .footer-social a img:hover {
+            transform: scale(1.2);
+        }
+
+        .footer-text {
+            font-size: 1.4rem;
+            color: #ccc;
+            margin-top: 2rem;
+            width: 100%;
+        }
+        
+
+        .container {
+            text-align: center;
+            padding: 3rem 0rem 15rem 0rem;
+        }
+
+        .container h2 {
+            font-size: 2rem;
+        }
+
+
+        input {
+            margin: 2rem;
+            padding: 1.5rem;
+            border: .3rem solid #ffdd00;
+            border-radius: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .twoPlanets {
+            padding: 1.6rem 3rem;
+            background-color: #ffdd00;
+            font-size: 1.7rem;
+            color: black;
+            border-radius: 1rem;
+            cursor: pointer;
+        }
+
+        .twoPlanets:hover {
+            background-color: #d1b503;
+        }
+
+        #result {
+            margin-top: 4rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+        /* ========== Responsive ========== */
+        @media (max-width: 768px) {
+            .about-section,
+            .form-container,
+            .developers-container,
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .about-image img {
+                margin: 3rem auto 0;
+            }
+
+            .developer-card {
+                width: 80%;
+                max-width: 300px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (min-width:1000.99px) and (max-width:2000px) {
+            .col-1 { width: 8.33%; }
+            .col-2 { width: 16.66%; }
+            .col-3 { width: 25%; }
+            .col-4 { width: 33.33%; }
+            .col-5 { width: 41.66%; }
+            .col-6 { width: 50%; }
+            .col-7 { width: 58.33%; }
+            .col-8 { width: 66.66%; }
+            .col-9 { width: 75%; }
+            .col-10 { width: 83.33%; }
+            .col-11 { width: 91.66%; }
+            .col-12 { width: 100%; }
+        }
+
+        @media (min-width:700.99px) and (max-width:1000px) {
+            nav { height: 17rem; }
+            .login { width: 30%; }
+            .imagecontainer img { width: 8rem; height: 8rem; }
+            .parent { height: 100vh; }
+            .back { height: 30vh; }
+            .col-md-1 { width: 8.33%; }
+            .col-md-2 { width: 16.66%; }
+            .col-md-3 { width: 25%; }
+            .col-md-4 { width: 33.33%; }
+            .col-md-5 { width: 41.66%; }
+            .col-md-6 { width: 50%; }
+            .col-md-7 { width: 58.33%; }
+            .col-md-8 { width: 66.66%; }
+            .col-md-9 { width: 75%; }
+            .col-md-10 { width: 83.33%; }
+            .col-md-11 { width: 91.66%; }
+            .col-md-12 { width: 100%; }
+        }
+
+        @media screen and (max-width:700px) {
+            nav { height: 30rem; flex-direction: column; }
+            .login { width: 40%; }
+            .wel { height: 150rem; }
+            .header { margin-top: 50rem; }
+            .imagecontainer img { width: 6rem; height: 6rem; }
+            .parent { height: 170vh; }
+            .parent1 { height: 250vh; }
+            .sec { height: 250vh; }
+            .wel { width: 150%; }
+            .back { height: 35vh; }
+            .links, .form1 { flex-direction: column; }
+            .col-sm-1 { width: 8.33%; }
+            .col-sm-2 { width: 16.67%; }
+            .col-sm-3 { width: 25%; }
+            .col-sm-4 { width: 33.33%; }
+            .col-sm-5 { width: 41.67%; }
+            .col-sm-6 { width: 50%; }
+            .col-sm-7 { width: 58.33%; }
+            .col-sm-8 { width: 66.67%; }
+            .col-sm-9 { width: 75%; }
+            .col-sm-10 { width: 83.33%; }
+            .col-sm-11 { width: 91.67%; }
+            .col-sm-12 { width: 100%; }
+
+
+            .nav-links.show {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .planet-image {
+            width: 10rem;
+            height: 10rem;
+        }
+        }
+    </style>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+    <nav class="col-12 col-md-12 col-sm-12">
+        <button class="logo" id="menu-toggle">Space Crew</button>
+        <div class="toggle-container" onclick="toggleSwitch()">
+            <div class="toggle-ball">
+                <img src="https://i.pinimg.com/474x/83/fb/d3/83fbd39ea8d2de4a3d2ee8ec6108a317.jpg" id="ball" alt="Theme Icon">
+            </div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#planets">Planets</a></li>
+            <li><a href="#developers">Developers</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+
+    <section class="first col-12 col-md-12 col-sm-12">
+        <div class="main col-12 col-md-10 col-sm-10">
+            <p class="col-12 col-md-12 col-sm-12">Journey through space</p>
+            <h1 class="col-12 col-md-12 col-sm-12">Explore the Solar System</h1>
+            <p class="col-12 col-md-12 col-sm-12">Discover planets, moons, and cosmic wonders beyond Earth.</p>
+            <button class="check col-2 col-md-2 col-sm-5">View Planets</button>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <section id="about" class="about-section col-12 col-md-12 col-sm-12">
+        <div class="about-content col-5 col-md-6 col-sm-6">
+            <h2>Our Solar System</h2>
+            <p>Welcome aboard the ultimate interactive journey across the solar system.</p>
+            <p>
+                Discover the mysteries of each planet, explore breathtaking visuals,<br>
+                and uncover fascinating facts that will leave you starstruck.<br>
+                Dive deep into planetary atmospheres, orbit moons,<br>
+                and witness the grandeur of our cosmic neighborhood.
+            </p>
+        </div>
+        <div class="about-image col-5 col-md-7 col-sm-11">
+            <img class="col-5 col-md-7 col-sm-12" src="https://i.pinimg.com/1200x/31/7a/8c/317a8cf49e4e6115c1be6cf820ebdcc0.jpg" alt="Solar System" />
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <section id="planets" class="menu-section col-12 col-md-12 col-sm-12">
+        <h2 class="col-11 col-md-11 col-sm-11">Planet Gallery</h2>
+        <p class="col-12 col-md-12 col-sm-12">Select a planet to view details.</p>
+        <div class="tabs col-10 col-md-11 col-sm-11">
+            <div class="tab active" id="tab1">All Planets</div>
+            <div class="tab" id="tab2">Mercury</div>
+            <div class="tab" id="tab3">Venus</div>
+            <div class="tab" id="tab4">Earth</div>
+            <div class="tab" id="tab5">Mars</div>
+            <div class="tab" id="tab6">Jupiter</div>
+            <div class="tab" id="tab7">Saturn</div>
+            <div class="tab" id="tab8">Uranus</div>
+            <div class="tab" id="tab9">Neptune</div>
+        </div>
+        <div id="menu" class="col-6 col-md-8 col-sm-10"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+        <div class="container col-12 col-md-12 col-sm-12">
+        <div>
+            <h2 class="col-12 col-md-10 col-sm-12">Here is a small comparison of any Two Planets</h2>
+        </div>
+        <input class="col-2 col-md-6 col-sm-9" type="text" id="planet1" placeholder="Enter first planet">
+        <input class="col-2 col-md-6 col-sm-9" type="text" id="planet2" placeholder="Enter second planet">
+        <button class=" twoPlanets col-2 col-md-6 col-sm-10" onclick="comparePlanets()">Compare</button>
+        <div class="col-12 col-md-11 col-sm-11" id="result"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <section class="form-container col-12 col-md-12 col-sm-12">
+        <div class="about col-5 col-md-5 col-sm-5">
+            <h2 class="col-11 col-md-11 col-sm-10">Reserve Your Seats to go and see the space</h2>
+            <p class="col-12 col-md-11 col-sm-10">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea.
+            </p>
+        </div>
+
+        <form class="form col-4 col-md-8 col-sm-8" id="myForm">
+            <input id="name" class="col-10 col-md-10 col-sm-10" type="text" placeholder="your name" />
+            <div id="nameError" class="error"></div>
+            <input id="email" class="col-10 col-md-10 col-sm-10" type="text" placeholder="your email address" />
+            <div id="emailError" class="error"></div>
+            <input id="phone" class="col-10 col-md-10 col-sm-10" type="text" placeholder="phone number" />
+            <div id="mobileerror" class="error"></div>
+            <input id="data" class="col-10 col-md-10 col-sm-10" type="datetime-local" placeholder="select Date & time" />
+            <select>
+                <option>Select Event</option>
+                <option>Birthday</option>
+                <option>Anniversary</option>
+                <option>Other</option>
+            </select>
+            <input class="submit col-10 col-md-10 col-sm-10" type="submit" value="Make Reservation" />
+        </form>
+    </section>
+
+
+    
+
+
+
+
+
+
+
+
+
+    <section id="developers" class="developers-section col-12 col-md-12 col-sm-12">
+        <h2>Meet Our Team</h2>
+        <div class="developers-container">
+            <div class="developer-card">
+                <img src="https://via.placeholder.com/100x100?text=Dev1" alt="Developer 1">
+                <h3>John Doe</h3>
+                <p>Frontend Developer</p>
+            </div>
+            <div class="developer-card">
+                <img src="https://via.placeholder.com/100x100?text=Dev2" alt="Developer 2">
+                <h3>Jane Smith</h3>
+                <p>Backend Developer</p>
+            </div>
+            <div class="developer-card">
+                <img src="https://via.placeholder.com/100x100?text=Dev3" alt="Developer 3">
+                <h3>Mike Johnson</h3>
+                <p>UI/UX Designer</p>
+            </div>
+            <div class="developer-card">
+                <img src="https://via.placeholder.com/100x100?text=Dev4" alt="Developer 4">
+                <h3>Sarah Williams</h3>
+                <p>Full Stack Developer</p>
+            </div>
+            <div class="developer-card">
+                <img src="https://via.placeholder.com/100x100?text=Dev5" alt="Developer 5">
+                <h3>David Brown</h3>
+                <p>Project Manager</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="col-12 col-md-12 col-sm-12">
+        <div class="footer-content">
+            <div class="footer-logo">Space Crew</div>
+            <ul class="footer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#planets">Planets</a></li>
+                <li><a href="#developers">Developers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="footer-social">
+                <a href="#"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook"></a>
+                <a href="#"><img src="https://img.icons8.com/color/48/000000/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram"></a>
+            </div>
+            <p class="footer-text">© 2025 Space Crew. All rights reserved.</p>
+        </div>
+    </footer>
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        var menuToggle = document.getElementById("menu-toggle");
+        var links = document.getElementById("nav-links");
+        menuToggle.addEventListener("click", function () {
+            links.classList.toggle("show");
+        });
+
+
+
+
+
+
+
+        function toggleSwitch() {
+            var ball = document.getElementById('ball');
+            ball.classList.toggle('active');
+            if (ball.classList.contains("active")) {
+                document.body.style.backgroundColor = "rgb(60,88,116)";
+                ball.src = "././images/sun.png";
+            } else {
+                document.body.style.backgroundColor = "black";
+                ball.src = "././images/moon.png";
+                document.body.style.color = "white";
+            }
+        }
+
+
+
+
+
+
+
+
+        var tabs = document.querySelectorAll(".tab");
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].addEventListener("click", function () {
+                for (var j = 0; j < tabs.length; j++) {
+                    tabs[j].classList.remove("active");
+                }
+                this.classList.add("active");
+            });
+        }
+
+
+
+
+        var tab1 = document.getElementById("tab1");
+        var tab2 = document.getElementById("tab2");
+        var tab3 = document.getElementById("tab3");
+        var tab4 = document.getElementById("tab4");
+        var tab5 = document.getElementById("tab5");
+        var tab6 = document.getElementById("tab6");
+        var tab7 = document.getElementById("tab7");
+        var tab8 = document.getElementById("tab8");
+        var tab9 = document.getElementById("tab9");
+
+        tab1.addEventListener("click", function () {
+            var menu = document.getElementById("menu");
+            var arr = [
+                 { description: "Mercury is the smallest planet in our solar system. Mercury is a little more than one-third the width of Earth, and has an equatorial diameter of about 3,032 miles (4,880 kilometers). Mercury is the closest planet to the Sun, orbiting at an average distance of 36 million miles (58 million kilometers). Mercury is 57 million miles closer to the Sun than Earth.", image: "././images/mercury.webp" },
+                { description: "Venus is the sixth largest planet in the solar system. Venus is about the same width as Earth, and has an equatorial diameter of about 7,521 miles (12,104 kilometers). For this reason, Venus is sometimes known as Earth’s twin. Venus is the second planet from the Sun, orbiting at an average distance of 67.2 million miles (108 million kilometers). Venus is about 26 million miles (42 million kilometers) closer to the Sun than Earth.", image: "././images/venus.webp" },
+                { description: "Earth is the fifth largest planet in the solar system. It has an equatorial diameter of about 7,926 miles (12,756 kilometers). Earth is the third planet from the Sun, orbiting at an average distance of 93 million miles (149.7 million kilometers).", image: "././images/earth.webp" },
+                { description: "Mars, the red planet, is the seventh largest planet in our solar system. Mars is about half the width of Earth, and has an equatorial diameter of about 4,221 miles (6,792 kilometers). Mars is the fourth planet from the Sun, orbiting at an average distance of 141.6 million miles (227.9 million kilometers). Mars is about 49 million miles (79 million kilometers) farther from the Sun than Earth.", image: "././images/mars.webp" },
+                { description: "Jupiter is the largest planet in the solar system. It’s about 11 times wider than Earth with an equatorial diameter of 88,846 miles (about 142,984 kilometers). Jupiter is the fifth planet from the Sun, orbiting at an average distance of 483.7 million miles (778 million kilometers). It’s about five times farther from the Sun than Earth.", image: "././images/jupiter.webp" },
+                { description: "Saturn, known for its spectacular icy rings, is the second largest planet in our solar system. It’s about nine times wider than Earth, with an equatorial diameter of about 74,898 miles (about 120,536 kilometers). Saturn is the sixth planet from the Sun, orbiting at an average distance of 889.8 million miles (1.4 billion kilometers). It’s about 9.5 times farther from the Sun than Earth.", image: "././images/saturn.webp" },
+                { description: "Uranus is the third largest planet in our solar system. It’s about four times wider than Earth, and has an equatorial diameter of about 31,763 miles (51,118 kilometers). Uranus is the seventh planet from the Sun, orbiting at an average distance of 1.8 billion miles (2.9 billion kilometers). It’s about 19 times farther from the Sun than Earth. ", image: "././images/uranus.webp" },
+                { description: "Neptune is the fourth largest planet. It’s about four times wider than Earth with an equatorial diameter of about 30,775 miles (49,528 kilometers). Neptune is the eighth, and the most distant planet from the Sun, orbiting at an average distance of 2.8 billion miles (4.5 billion kilometers). Neptune is about 30 times farther from the Sun than Earth. ", image: "././images/neptune.webp" }
+            ];
+
+            menu.innerHTML = "";
+            for (var i = 0; i < arr.length; i++) {
+                var wordBox = document.createElement("div");
+                wordBox.classList.add("sentence-box");
+                wordBox.style.fontSize = "2rem";
+                wordBox.style.marginBottom = "20px";
+
+                var description = document.createElement("div");
+                description.className = "col-12 col-md-6 col-sm-12 planet-desc";
+                description.textContent = arr[i].description;
+
+                var images = document.createElement("img");
+                images.src = arr[i].image;
+                images.className = "col-12 col-md-6 col-sm-12 planet-image";
+                images.style.width = "30%"
+                images.onerror = function() {
+                    this.src = "https://via.placeholder.com/300x300?text=Planet+Image";
+                };
+
+                wordBox.appendChild(description);
+                wordBox.appendChild(images);
+                menu.appendChild(wordBox);
+            }
+        });
+
+        tab2.addEventListener("click", function () {
+            var menu = document.getElementById("menu");
+            var arr = [
+                { description: "Mercury is the smallest planet in our solar system. Mercury is a little more than one-third the width of Earth, and has an equatorial diameter of about 3,032 miles (4,880 kilometers). Mercury is the closest planet to the Sun, orbiting at an average distance of 36 million miles (58 million kilometers). Mercury is 57 million miles closer to the Sun than Earth.", image: "https://images-assets.nasa.gov/image/PIA11245/PIA11245~orig.jpg" }
+            ];
+
+            menu.innerHTML = "";
+            for (var i = 0; i < arr.length; i++) {
+                var wordBox = document.createElement("div");
+                wordBox.classList.add("sentence-box");
+                wordBox.style.fontSize = "2rem";
+                wordBox.style.marginBottom = "20px";
+
+                var description = document.createElement("div");
+                description.className = "col-12 col-md-6 col-sm-12 planet-desc";
+                description.textContent = arr[i].description;
+
+                var images = document.createElement("img");
+                images.src = arr[i].image;
+                images.className = "col-12 col-md-6  planet-image";
+                images.style.width = "30%"
+                images.onerror = function() {
+                    this.src = "https://via.placeholder.com/300x300?text=Mercury";
+                };
+
+                wordBox.appendChild(description);
+                wordBox.appendChild(images);
+                menu.appendChild(wordBox);
+            }
+        });
+
+        tab3.addEventListener("click", function () {
+            var menu = document.getElementById("menu");
+            var arr = [
+                { description: "Venus is the sixth largest planet in the solar system. Venus is about the same width as Earth, and has an equatorial diameter of about 7,521 miles (12,104 kilometers). For this reason, Venus is sometimes known as Earth’s twin. Venus is the second planet from the Sun, orbiting at an average distance of 67.2 million miles (108 million kilometers). Venus is about 26 million miles (42 million kilometers) closer to the Sun than Earth.", image: "https://images-assets.nasa.gov/image/PIA00271/PIA00271~orig.jpg" }
+            ];
+
+            menu.innerHTML = "";
+            for (var i = 0; i < arr.length; i++) {
+                var wordBox = document.createElement("div");
+                wordBox.classList.add("sentence-box");
+                wordBox.style.fontSize = "2rem";
+                wordBox.style.marginBottom = "20px";
+
+                var description = document.createElement("div");
+                description.className = "col-12 col-md-6 col-sm-12 planet-desc";
+                description.textContent = arr[i].description;
+
+                var images = document.createElement("img");
+                images.src = arr[i].image;
+                images.className = "col-12 col-md-6 col-sm-12 planet-image";
+                images.style.width = "30%"
+                images.onerror = function() {
+                    this.src = "https://via.placeholder.com/300x300?text=Venus";
+                };
+
+                wordBox.appendChild(description);
+                wordBox.appendChild(images);
+                menu.appendChild(wordBox);
+            }
+        });
+
+        tab4.addEventListener("click", function () {
+            var menu = document.getElementById("menu");
+            var arr = [
+                { description: "Earth is the fifth largest planet in the solar system. It has an equatorial diameter of about 7,926 miles (12,756 kilometers). Earth is the third planet from the Sun, orbiting at an average distance of 93 million miles (149.7 million kilometers).", image: "https://images-assets.nasa.gov/image/PIA18033/PIA18033~orig.jpg" }
+            ];
+
+            menu.innerHTML = "";
+            for (var i = 0; i < arr.length; i++) {
+                var wordBox = document.createElement("div");
+                wordBox.classList.add("sentence-box");
+                wordBox.style.fontSize = "2rem";
+                wordBox.style.marginBottom = "20px";
+
+                var description = document.createElement("div");
+                description.className = "col-12 col-md-6 col-sm-12 planet-desc";
+                description.textContent = arr[i].description;
+
+                var images = document.createElement("img");
+                images.src = arr[i].image;
+                images.className = "col-12 col-md-6 col-sm-12 planet-image";
+                images.style.width = "30%";
+                images.onerror = function() {
+                    this.src = "https://via.placeholder.com/300x300?text=Earth";
+                };
+
+                wordBox.appendChild(description);
+                wordBox.appendChild(images);
+                menu.appendChild(wordBox);
+            }
+        });
+
+        tab5.addEventListener("click", function () {
+            var menu = document.getElementById("menu");
+            var arr = [
+                { description: "Mars, the red planet, is the seventh largest planet in our solar system. Mars is about half the width of Earth, and has an equatorial diameter of about 4,221 miles (6,792 kilometers). Mars is the fourth planet from the Sun, orbiting at an average distance of 141.6 million miles (227.9 million kilometers). Mars is about 49 million miles (79 million kilometers) farther from the Sun than Earth.", image: "https://images-assets.nasa.gov/image/PIA21723/PIA21723~orig.jpg" }
+            ];
+
+            menu.innerHTML = "";
+            for (var i = 0; i < arr.length; i++) {
+                var wordBox = document.createElement("div");
+                wordBox.classList.add("sentence-box");
+                wordBox.style.fontSize = "2rem";
+                wordBox.style.marginBottom = "20px";
+
+                var description = document.createElement("div");
+                description.className = "col-12 col-md-6 col-sm-12 planet-desc";
+                description.textContent = arr[i].description;
+
+                var images = document.createElement("img");
+                images.src = arr[i].image;
+                images.className = "col-12 col-md-6 col-sm-12 planet-image";
+                images.style.width = "30%";
+                images.onerror = function() {
+                    this.src = "https://via.placeholder.com/300x300?text=Mars";
+                };
+
+                wordBox.appendChild(description);
+                wordBox.appendChild(images);
+                menu.appendChild(wordBox);
+            }
+        });
+
+        tab6.addEventListener("click", function () {
+            var menu = document.getElementById("menu");
+            var arr = [
+                { description: "Jupiter is the largest planet in the solar system. It’s about 11 times wider than Earth with an equatorial diameter of 88,846 miles (about 142,984 kilometers). Jupiter is the fifth planet from the Sun, orbiting at an average distance of 483.7 million miles (778 million kilometers). It’s about five times farther from the Sun than Earth.", image: "https://images-assets.nasa.gov/image/PIA21714/PIA21714~orig.jpg" }
+            ];
+
+            menu.innerHTML = "";
+            for (var i = 0; i < arr.length; i++) {
+                var wordBox = document.createElement("div");
+                wordBox.classList.add("sentence-box");
+                wordBox.style.fontSize = "2rem";
+                wordBox.style.marginBottom = "20px";
+
+                var description = document.createElement("div");
+                description.className = "col-12 col-md-6 col-sm-12 planet-desc";
+                description.textContent = arr[i].description;
+
+                var images = document.createElement("img");
+                images.src = arr[i].image;
+                images.className = "col-12 col-md-6 col-sm-12 planet-image";
+                images.style.width = "30%";
+                images.onerror = function() {
+                    this.src = "https://via.placeholder.com/300x300?text=Jupiter";
+                };
+
+                wordBox.appendChild(description);
+                wordBox.appendChild(images);
+                menu.appendChild(wordBox);
+            }
+        });
+
+        tab7.addEventListener("click", function () {
+            var menu = document.getElementById("menu");
+            var arr = [
+                { description: "Saturn, known for its spectacular icy rings, is the second largest planet in our solar system. It’s about nine times wider than Earth, with an equatorial diameter of about 74,898 miles (about 120,536 kilometers). Saturn is the sixth planet from the Sun, orbiting at an average distance of 889.8 million miles (1.4 billion kilometers). It’s about 9.5 times farther from the Sun than Earth.", image: "https://images-assets.nasa.gov/image/PIA17172/PIA17172~orig.jpg" }
+            ];
+
+            menu.innerHTML = "";
+            for (var i = 0; i < arr.length; i++) {
+                var wordBox = document.createElement("div");
+                wordBox.classList.add("sentence-box");
+                wordBox.style.fontSize = "2rem";
+                wordBox.style.marginBottom = "20px";
+
+                var description = document.createElement("div");
+                description.className = "col-12 col-md-6 col-sm-12 planet-desc";
+                description.textContent = arr[i].description;
+
+                var images = document.createElement("img");
+                images.src = arr[i].image;
+                images.className = "col-12 col-md-6 col-sm-12 planet-image";
+                images.style.width = "30%";
+                images.onerror = function() {
+                    this.src = "https://via.placeholder.com/300x300?text=Saturn";
+                };
+
+                wordBox.appendChild(description);
+                wordBox.appendChild(images);
+                menu.appendChild(wordBox);
+            }
+        });
+
+        tab8.addEventListener("click", function () {
+            var menu = document.getElementById("menu");
+            var arr = [
+                { description: "Uranus is the third largest planet in our solar system. It’s about four times wider than Earth, and has an equatorial diameter of about 31,763 miles (51,118 kilometers). Uranus is the seventh planet from the Sun, orbiting at an average distance of 1.8 billion miles (2.9 billion kilometers). It’s about 19 times farther from the Sun than Earth.", image: "https://images-assets.nasa.gov/image/PIA18182/PIA18182~orig.jpg" }
+            ];
+
+            menu.innerHTML = "";
+            for (var i = 0; i < arr.length; i++) {
+                var wordBox = document.createElement("div");
+                wordBox.classList.add("sentence-box");
+                wordBox.style.fontSize = "2rem";
+                wordBox.style.marginBottom = "20px";
+
+                var description = document.createElement("div");
+                description.className = "col-12 col-md-6 col-sm-12 planet-desc";
+                description.textContent = arr[i].description;
+
+                var images = document.createElement("img");
+                images.src = arr[i].image;
+                images.className = "col-12 col-md-6 col-sm-12 planet-image";
+                images.style.width = "30%";
+                images.onerror = function() {
+                    this.src = "https://via.placeholder.com/300x300?text=Uranus";
+                };
+
+                wordBox.appendChild(description);
+                wordBox.appendChild(images);
+                menu.appendChild(wordBox);
+            }
+        });
+
+        tab9.addEventListener("click", function () {
+            var menu = document.getElementById("menu");
+            var arr = [
+                { description: "Neptune is the fourth largest planet. It’s about four times wider than Earth with an equatorial diameter of about 30,775 miles (49,528 kilometers). Neptune is the eighth, and the most distant planet from the Sun, orbiting at an average distance of 2.8 billion miles (4.5 billion kilometers). Neptune is about 30 times farther from the Sun than Earth.", image: "https://images-assets.nasa.gov/image/PIA01492/PIA01492~orig.jpg" }
+            ];
+
+            menu.innerHTML = "";
+            for (var i = 0; i < arr.length; i++) {
+                var wordBox = document.createElement("div");
+                wordBox.classList.add("sentence-box");
+                wordBox.style.fontSize = "2rem";
+                wordBox.style.marginBottom = "20px";
+
+                var description = document.createElement("div");
+                description.className = "col-12 col-md-6 col-sm-12 planet-desc";
+                description.textContent = arr[i].description;
+
+                var images = document.createElement("img");
+                images.src = arr[i].image;
+                images.className = "col-12 col-md-6 col-sm-6 planet-image";
+                images.style.width = "30%"
+                images.onerror = function() {
+                    this.src = "https://via.placeholder.com/300x300?text=Neptune";
+                };
+
+                wordBox.appendChild(description);
+                wordBox.appendChild(images);
+                menu.appendChild(wordBox);
+            }
+        });
+
+
+
+
+
+
+
+
+
+        var myform = document.getElementById("myForm");
+        myform.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            var username = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("phone").value;
+
+            document.getElementById("nameError").textContent = '';
+            document.getElementById("emailError").textContent = '';
+            document.getElementById("mobileerror").textContent = '';
+
+            var isValid = true;
+
+            var nameReg = /^[a-zA-Z]{2,10}$/;
+            if (!nameReg.test(username)) {
+                document.getElementById("nameError").textContent = "Please enter a correct name (2-10 letters)";
+                isValid = false;
+            }
+
+            var emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailReg.test(email)) {
+                document.getElementById("emailError").textContent = "Please enter a correct email";
+                isValid = false;
+            }
+
+            var mobilereg = /^(010|011|012|015)[0-9]{8}$/;
+            if (!mobilereg.test(mobile)) {
+                document.getElementById("mobileerror").textContent = "Please enter a correct mobile number";
+                isValid = false;
+            }
+
+            if (isValid) {
+                myform.submit();
+            }
+        });
+
+
+
+
+
+
+
+
+        
+
+        function comparePlanets() {
+    var p1 = document.getElementById("planet1").value.toLowerCase();
+    var p2 = document.getElementById("planet2").value.toLowerCase();
+    var result = document.getElementById("result");
+
+    result.innerHTML = "" ;
+
+    var planets = [
+        { name: "Mercury", size: 4879, order: 1 },
+        { name: "Venus", size: 12104, order: 2 },
+        { name: "Earth", size: 12742, order: 3 },
+        { name: "Mars", size: 6779, order: 4 },
+        { name: "Jupiter", size: 139820, order: 5 },
+        { name: "Saturn", size: 116460, order: 6 },
+        { name: "Uranus", size: 50724, order: 7 },
+        { name: "Neptune", size: 49244, order: 8 }
+    ];
+
+    var planet1;
+    var planet2;
+
+
+    for (var i = 0; i < planets.length; i++) {
+        if (planets[i].name.toLowerCase() === p1) {
+            planet1 = planets[i];
+        }
+        if (planets[i].name.toLowerCase() === p2) {
+            planet2 = planets[i];
+        }
+    }
+
+    if (!planet1 || !planet2) {
+        result.innerHTML = "Please enter valid planet names.";
+        return;
+    }
+
+    if (p1 === p2) {
+        result.innerHTML = "Please enter two different planets.";
+        return;
+    }
+
+    var sizeText = document.createElement("p");
+    if (planet1.size > planet2.size) {
+        sizeText.innerHTML = planet1.name + " is larger than " + planet2.name + ".";
+    } else {
+        sizeText.innerHTML = planet2.name + " is larger than " + planet1.name + ".";
+    }
+
+    var orderText = document.createElement("p");
+    orderText.innerHTML = planet1.name + " is planet number " + planet1.order +
+        " from the Sun, and " + planet2.name + " is planet number " + planet2.order + ".";
+
+    
+    result.appendChild(sizeText);
+    result.appendChild(orderText);
+}
+    </script>
+</body>
+</html>
