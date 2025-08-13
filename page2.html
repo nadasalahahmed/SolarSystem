@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Galaxies Theme</title>
+ <link rel="stylesheet" href="page2.css">
+     
+</head>
+
+<body>
+    <nav class="col-12 col-md-12 col-sm-12" id="nav">
+        <div class="logoSection" id="logoSection">
+            <button class="logo" id="menu-toggle">Space Crew</button>
+            <div class="toggle-container" onclick="toggleSwitch()">
+                <div class="toggle-ball">
+                    <img src="https://cdn-icons-png.flaticon.com/128/869/869869.png" id="ball" alt="Theme Icon">
+                </div>
+            </div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="page1.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#planets">Planets</a></li>
+            <li class="link4"><a href="index.html#developers">Developers</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Galaxies</a>
+                <div class="dropdown-content">
+                    <a href="#milky-way">Milky Way</a>
+                    <a href="#andromeda">Andromeda</a>
+                    <a href="#triangulum">Triangulum</a>
+                </div>
+            </li>
+            <li class="link5"><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="galaxies" class="menu-section col-12 col-md-12 col-sm-12">
+        <h2 class="col-11 col-md-11 col-sm-10">Galaxy Gallery</h2>
+        <p class="col-12 col-md-10 col-sm-10">Select a galaxy to view details and explore its planets and comets.</p>
+        <div class="tabs col-10 col-md-11 col-sm-11">
+            <div class="tab active" id="tab1">All Galaxies</div>
+            <div class="tab" id="tab2">Milky Way</div>
+            <div class="tab" id="tab3">Andromeda</div>
+            <div class="tab" id="tab4">Triangulum</div>
+        </div>
+        <div id="menu" class="col-6 col-md-8 col-sm-10"></div>
+    </section>
+
+    <footer class="col-12 col-md-12 col-sm-12">
+        <div class="footer-content">
+            <div class="footer-logo">Space Crew</div>
+            <ul class="footer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#planets">Planets</a></li>
+                <li><a href="page2.html">Galaxies</a></li>
+                <li><a href="#developers">Developers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="footer-social">
+                <a href="#"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook"></a>
+                <a href="#"><img src="https://img.icons8.com/color/48/000000/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram"></a>
+            </div>
+            <p class="footer-text">© 2025 Space Crew. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script src="page2.js"></script>
+</body>
+</html>

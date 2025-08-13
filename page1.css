@@ -1,0 +1,752 @@
+
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-size: 10px;
+            background: rgb(60, 88, 116);
+            color: #eee;
+            font-family: sans-serif;
+        }
+
+        nav {
+            position: fixed;
+            height: 7rem;
+            top: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: rgba(10, 10, 40, 0.9);
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .logoSection {
+            display: flex;
+            justify-content: space-around;
+            gap: 90rem;
+            align-items: center;
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .toggle-container {
+            width: 3rem;
+            height: 3rem;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .toggle-ball img {
+            width: 3rem;
+            border-radius: 50%;
+            margin-top: 0rem;
+        }
+
+        .nav-links {
+            display: none;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links.show {
+            display: flex;
+        }
+
+        .nav-links li a {
+            color: #fff;
+            font-size: 1.8rem;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(10, 10, 40, 0.9);
+            min-width: 16rem;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            color: #fff;
+            padding: 1.2rem 1.6rem;
+            text-decoration: none;
+            display: block;
+            font-size: 1.6rem;
+        }
+
+        .dropdown-content a:hover {
+            background: #5ba2f8;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Rest of the existing CSS remains unchanged */
+        .first {
+            background: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 7rem;
+            transition: background-image .6s ease-in;
+        }
+
+        .main {
+            text-align: center;
+        }
+
+        .main h1 {
+            font-size: 5rem;
+            margin: 1rem 0;
+        }
+
+        .main p {
+            font-size: 1.8rem;
+        }
+
+        .check {
+            margin-top: 2rem;
+            padding: 1.2rem 2rem;
+            background: #9ac4f8;
+            color: #000;
+            font-size: 1.8rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 1rem;
+        }
+
+        .check:hover {
+            background: #5ba2f8;
+        }
+
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 6rem 0rem;
+            gap: 2rem;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .about-content h2 {
+            font-size: 3.6rem;
+            color: #87b5f1;
+            margin-bottom: 2rem;
+        }
+
+        .about-content p {
+            font-size: 1.6rem;
+            color: #ddd;
+        }
+
+        .about-image img {
+            height: 30rem;
+            border-radius: 8px;
+            margin-left: 15rem;
+        }
+
+        .menu-section {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 0rem;
+            background: transparent;
+        }
+
+        .menu-section h2 {
+            font-size: 4rem;
+            text-align: center;
+        }
+
+        .menu-section p {
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .tabs {
+            display: flex;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: .5rem;
+            border: .2rem solid #9ac4f8;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 2rem 2rem;
+            cursor: pointer;
+            font-size: 2rem;
+            color: #ccc;
+            background: #111;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .tab.active {
+            background: #222;
+            color: #9ac4f8;
+        }
+
+        #menu {
+            margin: 5rem auto;
+        }
+
+        .sentence-box {
+            border-left: 4px solid #9ac4f8;
+            padding: 2rem 1rem;
+            margin: 2rem auto;
+            background: #111;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            height: 40rem;
+        }
+
+        .planet-desc,
+        .planet-info {
+            font-size: 1.8rem;
+            color: #ccc;
+            margin-bottom: 0.5rem;
+        }
+
+        .planet-image {
+            height: 15rem;
+            animation: rotatePlanet 10s linear infinite;
+            margin-top: 2rem;
+        }
+
+        @keyframes rotatePlanet {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .form-container {
+            background-image: url(https://science.nasa.gov/wp-content/uploads/2023/07/pia06890-our-solar-system-banner-1920x640-1.jpg?w=1920);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-blend-mode: overlay;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10rem 0rem 10rem 0rem;
+        }
+
+        .form {
+            background-color: #eee;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem .5rem;
+            border-radius: 2rem;
+            margin-left: 5rem;
+        }
+
+        .form input,
+        .form button {
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        .form button {
+            background: #9ac4f8;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .about {
+            margin-top: 5rem;
+            padding: 5rem;
+            margin-right: 6rem;
+        }
+
+        .about h2 {
+            color: #e6e6e6;
+            font-size: 4rem;
+            margin-bottom: 5rem;
+            margin-top: 3rem;
+        }
+
+        .about p {
+            color: #e6e6e6;
+            line-height: 2rem;
+            font-size: 1.5rem;
+        }
+
+        #nameError,
+        #emailError,
+        #mobileerror {
+            font-size: 1.5rem;
+            color: black;
+        }
+
+        .submit {
+            background-color: #9ac4f8;
+        }
+
+        .submit:hover {
+            background: #5ba2f8;
+        }
+
+        .developers-section {
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .developers-section h2 {
+            font-size: 4rem;
+            color: #87b5f1;
+            margin-bottom: 4rem;
+        }
+
+        .developers-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .developer-card {
+            background: #222;
+            border-radius: 8px;
+            padding: 2rem;
+            width: 200px;
+            transition: transform 0.3s ease;
+        }
+
+        .developer-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .developer-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 2px solid #9ac4f8;
+        }
+
+        .developer-card h3 {
+            font-size: 2rem;
+            color: #9ac4f8;
+            margin-bottom: 0.5rem;
+        }
+
+        .developer-card p {
+            font-size: 1.6rem;
+            color: #ccc;
+        }
+
+        footer {
+            padding: 4rem 0;
+            text-align: center;
+            color: #fff;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .footer-logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #9ac4f8;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 1rem 5rem 0rem 0rem;
+        }
+
+        .footer-links li a {
+            color: #fff;
+            font-size: 1.6rem;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links li a:hover {
+            color: #9ac4f8;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .footer-social a img {
+            width: 3rem;
+            height: 3rem;
+            transition: transform 0.3s;
+        }
+
+        .footer-social a img:hover {
+            transform: scale(1.2);
+        }
+
+        .footer-text {
+            font-size: 1.4rem;
+            color: #ccc;
+            margin-top: 2rem;
+            width: 100%;
+        }
+
+        .container {
+            text-align: center;
+            padding: 3rem 0rem 15rem 0rem;
+            
+        }
+
+        .container h2 {
+            font-size: 2rem;
+        }
+
+        input {
+            margin: 2rem;
+            padding: 1.5rem;
+            border: .5rem solid #9ac4f8;
+            border-radius: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .twoPlanets {
+            padding: 1.6rem 3rem;
+            background-color: #9ac4f8;
+            font-size: 1.7rem;
+            color: black;
+            border-radius: 1rem;
+            cursor: pointer;
+        }
+
+        .twoPlanets:hover {
+            background: #5ba2f8;
+        }
+
+        #result {
+            margin-top: 4rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+
+            .about-section,
+            .form-container,
+            .developers-container,
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .tabs {
+                flex-direction: column;
+                gap: 0rem;
+            }
+
+            .about-image img {
+                margin: 3rem auto 0;
+            }
+
+            .developer-card {
+                width: 80%;
+                max-width: 300px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .dropdown-content {
+                position: static;
+                background: rgba(10, 10, 40, 0.7);
+            }
+        }
+
+        @media (min-width:1000.99px) and (max-width:2000px) {
+            .about-content {
+                margin-left: 7rem;
+            }
+
+            .about-image {
+                margin-right: 7rem;
+            }
+
+            .col-1 {
+                width: 8.33%;
+            }
+
+            .col-2 {
+                width: 16.66%;
+            }
+
+            .col-3 {
+                width: 25%;
+            }
+
+            .col-4 {
+                width: 33.33%;
+            }
+
+            .col-5 {
+                width: 41.66%;
+            }
+
+            .col-6 {
+                width: 50%;
+            }
+
+            .col-7 {
+                width: 58.33%;
+            }
+
+            .col-8 {
+                width: 66.66%;
+            }
+
+            .col-9 {
+                width: 75%;
+            }
+
+            .col-10 {
+                width: 83.33%;
+            }
+
+            .col-11 {
+                width: 91.66%;
+            }
+
+            .col-12 {
+                width: 100%;
+            }
+
+            .gap {
+                gap: 15rem;
+            }
+        }
+
+        @media (min-width:700.99px) and (max-width:1000px) {
+            .col-md-1 {
+                width: 8.33%;
+            }
+
+            .col-md-2 {
+                width: 16.66%;
+            }
+
+            .col-md-3 {
+                width: 25%;
+            }
+
+            .col-md-4 {
+                width: 33.33%;
+            }
+
+            .col-md-5 {
+                width: 41.66%;
+            }
+
+            .col-md-6 {
+                width: 50%;
+            }
+
+            .col-md-7 {
+                width: 58.33%;
+            }
+
+            .col-md-8 {
+                width: 66.66%;
+            }
+
+            .col-md-9 {
+                width: 75%;
+            }
+
+            .col-md-10 {
+                width: 83.33%;
+            }
+
+            .col-md-11 {
+                width: 91.66%;
+            }
+
+            .col-md-12 {
+                width: 100%;
+            }
+
+            .about-image img {
+                margin-left: 5rem;
+            }
+
+            .planet-image {
+                width: 40rem;
+                /* height: 12rem; */
+            }
+
+            .logoSection {
+                gap: 50rem;
+            }
+
+            .gap {
+                gap: 1rem;
+            }
+        }
+
+        @media screen and (max-width:700px) {
+            .col-sm-1 {
+                width: 8.33%;
+            }
+
+            .col-sm-2 {
+                width: 16.67%;
+            }
+
+            .col-sm-3 {
+                width: 25%;
+            }
+
+            .col-sm-4 {
+                width: 33.33%;
+            }
+
+            .col-sm-5 {
+                width: 41.67%;
+            }
+
+            .col-sm-6 {
+                width: 50%;
+            }
+
+            .col-sm-7 {
+                width: 58.33%;
+            }
+
+            .col-sm-8 {
+                width: 66.67%;
+            }
+
+            .col-sm-9 {
+                width: 75%;
+            }
+
+            .col-sm-10 {
+                width: 83.33%;
+            }
+
+            .col-sm-11 {
+                width: 91.67%;
+            }
+
+            .col-sm-12 {
+                width: 100%;
+            }
+
+            .nav-links.show {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .planet-image {
+                width: 35rem;
+                height: 8rem;
+            }
+
+            .about-image img {
+                margin-left: 8rem;
+            }
+
+            .form {
+                margin-right: 9rem;
+            }
+
+            #tab7.about-image img {
+                width: 50rem;
+                height: 50rem;
+            }
+
+            #tab7.planet-desc,
+            .planet-info {
+                font-size: .5rem;
+            }
+
+            .SmallHeight {
+                gap: 1rem;
+                height: 25rem;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+
+            nav .nav-links.corner {
+                display: grid;
+                grid-template-columns: repeat(3, 30%);
+                gap: 4rem;
+                margin-right: 5rem;
+            }
+
+            .logoSection {
+                gap: 20rem;
+            }
+
+            .gap {
+                gap: 20rem;
+            }
+
+              #result ,.container h2 {
+            margin-left: 5rem;
+        }
+
+        .about-image img {
+            height: 20rem;
+        }
+
+
+        }
+    

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Solar System Theme</title>
+   <link rel="stylesheet" href="page1.css">
+</head>
+
+<body>
+    <nav class="col-12 col-md-12 col-sm-12" id="nav">
+        <div class="logoSection" id="logoSection">
+            <button class="logo" id="menu-toggle">Space Crew</button>
+            <div class="toggle-container" onclick="toggleSwitch()">
+                <div class="toggle-ball">
+                    <img src="https://cdn-icons-png.flaticon.com/128/869/869869.png" id="ball" alt="Theme Icon">
+                </div>
+            </div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#planets">Planets</a></li>
+            <li class="link4"><a href="#developers">Developers</a></li>
+            <li class="dropdown">
+                <a href="page2.html" class="dropbtn">Galaxies</a>
+                <div class="dropdown-content">
+                    <a href="page2.html">Milky Way</a>
+                    <a href="page2.html">Andromeda</a>
+                    <a href="page2.html">Triangulum</a>
+                </div>
+            </li>
+            <li class="link5"><a href="signin.html">Contact</a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+    <section class="first col-12 col-md-12 col-sm-12" id="first">
+        <div class="main col-12 col-md-10 col-sm-10">
+            <p class="col-12 col-md-12 col-sm-12">Journey through space</p>
+            <h1 class="col-12 col-md-12 col-sm-12">Explore the Solar System</h1>
+            <p class="col-12 col-md-12 col-sm-12">Discover planets, moons, and cosmic wonders beyond Earth.</p>
+            <a href="planetscode.html">
+                <button class="check col-2 col-md-3 col-sm-5">View Planets</button>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section col-12 col-md-12 col-sm-12">
+        <div class="about-content col-4 col-md-6 col-sm-10">
+            <h2 class="col-12 col-md-12 col-sm-12">Our Solar System</h2>
+            <p class="col-12 col-md-12 col-sm-12">Welcome aboard the ultimate interactive journey across the solar
+                system.</p>
+            <p class="col-12 col-md-12 col-sm-12">
+                Discover the mysteries of each planet, explore breathtaking visuals,<br>
+                and uncover fascinating facts that will leave you starstruck.<br>
+                Dive deep into planetary atmospheres, orbit moons,<br>
+                and witness the grandeur of our cosmic neighborhood.
+            </p>
+        </div>
+        <div class="about-image col-5 col-md-8 col-sm-12">
+            <img class="col-8 col-md-10 col-sm-7"
+                src="https://images.pexels.com/photos/21633313/pexels-photo-21633313/free-photo-of-view-of-the-night-sky.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Solar System" />
+        </div>
+    </section>
+
+    <section id="planets" class="menu-section col-12 col-md-12 col-sm-12">
+        <h2 class="col-11 col-md-11 col-sm-11">Planet Gallery</h2>
+        <p class="col-12 col-md-12 col-sm-12">Select a planet to view details.</p>
+        <div class="tabs col-10 col-md-11 col-sm-11">
+            <div class="tab active" id="tab1">All Planets</div>
+            <div class="tab" id="tab2">Mercury</div>
+            <div class="tab" id="tab3">Venus</div>
+            <div class="tab" id="tab4">Earth</div>
+            <div class="tab" id="tab5">Mars</div>
+            <div class="tab" id="tab6">Jupiter</div>
+            <div class="tab" id="tab7">Saturn</div>
+            <div class="tab" id="tab8">Uranus</div>
+            <div class="tab" id="tab9">Neptune</div>
+        </div>
+        <div id="menu" class="col-6 col-md-8 col-sm-10"></div>
+    </section>
+
+    <div class="container col-12 col-md-12 col-sm-12">
+        <div>
+            <h2 class="col-12 col-md-12 col-sm-9">Here is a small comparison of any Two Planets</h2>
+        </div>
+        <input class="col-2 col-md-6 col-sm-9" type="text" id="planet1" placeholder="Enter first planet">
+        <input class="col-2 col-md-6 col-sm-9" type="text" id="planet2" placeholder="Enter second planet">
+        <button class="twoPlanets col-2 col-md-6 col-sm-10" onclick="comparePlanets()">Compare</button>
+        <div class="col-12 col-md-12 col-sm-9" id="result"></div>
+    </div>
+
+
+
+
+
+
+    <section class="form-container col-12 col-md-12 col-sm-12">
+        <div class="about col-5 col-md-3 col-sm-6">
+            <h2 class="col-12 col-md-12 col-sm-12">Reserve Your Seats to go and see the space</h2>
+            <p class="col-12 col-md-12 col-sm-12">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea.
+            </p>
+        </div>
+        <form class="form col-4 col-md-5 col-sm-9" id="myForm">
+            <input id="name" class="col-10 col-md-10 col-sm-10" type="text" placeholder="your name" />
+            <div id="nameError" class="error"></div>
+            <input id="email" class="col-10 col-md-10 col-sm-10" type="text" placeholder="your email address" />
+            <div id="emailError" class="error"></div>
+            <input id="phone" class="col-10 col-md-10 col-sm-10" type="text" placeholder="phone number" />
+            <div id="mobileerror" class="error"></div>
+            <input id="data" class="col-10 col-md-10 col-sm-10" type="datetime-local"
+                placeholder="select Date & time" />
+            <input class="submit col-10 col-md-10 col-sm-10" type="submit" value="Make Reservation" />
+        </form>
+    </section>
+
+    <section id="developers" class="developers-section col-12 col-md-12 col-sm-12">
+        <h2>Meet Our Team</h2>
+        <div class="developers-container">
+            <div class="developer-card col-3 col-md-5 col-sm-10">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/250px-Unknown_person.jpg"
+                    alt="Developer 1">
+                <h3>John Doe</h3>
+                <p>Frontend Developer</p>
+            </div>
+            <div class="developer-card col-3 col-md-5 col-sm-10">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/250px-Unknown_person.jpg"
+                    alt="Developer 2">
+                <h3>Jane Smith</h3>
+                <p>Backend Developer</p>
+            </div>
+            <div class="developer-card col-3 col-md-5 col-sm-10">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/250px-Unknown_person.jpg"
+                    alt="Developer 3">
+                <h3>Mike Johnson</h3>
+                <p>UI/UX Designer</p>
+            </div>
+            <div class="developer-card col-3 col-md-5 col-sm-10">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/250px-Unknown_person.jpg"
+                    alt="Developer 4">
+                <h3>Sarah Williams</h3>
+                <p>Full Stack Developer</p>
+            </div>
+            <div class="developer-card col-3 col-md-5 col-sm-10">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/250px-Unknown_person.jpg"
+                    alt="Developer 5">
+                <h3>David Brown</h3>
+                <p>Project Manager</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="col-12 col-md-12 col-sm-12">
+        <div class="footer-content">
+            <div class="footer-logo">Space Crew</div>
+            <ul class="footer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#planets">Planets</a></li>
+                <li><a href="page2.html">Galaxies</a></li>
+                <li><a href="#developers">Developers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="footer-social">
+                <a href="#"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook"></a>
+                <a href="#"><img src="https://img.icons8.com/color/48/000000/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram"></a>
+            </div>
+            <p class="footer-text">© 2025 Space Crew. All rights reserved.</p>
+        </div>
+    </footer>
+
+   <script src="page1.js"></script>
+</body>
+
+</html>
